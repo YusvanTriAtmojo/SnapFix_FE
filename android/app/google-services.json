@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "605365391186",
+    "project_id": "snapfix-e4329",
+    "storage_bucket": "snapfix-e4329.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:605365391186:android:0db5d5550136d2eec1b48b",
+        "android_client_info": {
+          "package_name": "yusvan.damagereports"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-GSHQHlIjTi5mVahQAU2kAA92iRAYq_o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
