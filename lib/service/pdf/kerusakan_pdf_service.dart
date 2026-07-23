@@ -201,7 +201,6 @@ class KerusakanPdfService {
                 8: const pw.FixedColumnWidth(70),
               },
               children: [
-                //================ HEADER ==================
                 pw.TableRow(
                   decoration: const pw.BoxDecoration(color: PdfColors.blue900),
                   children: [
@@ -217,7 +216,6 @@ class KerusakanPdfService {
                   ],
                 ),
 
-                //================ DATA ==================
                 ...List.generate(data.length, (index) {
                   final item = data[index];
 
@@ -240,10 +238,8 @@ class KerusakanPdfService {
                       _cell(item.status),
 
                       _cell(item.deskripsi),
-
-                      //---------------- FOTO KERUSAKAN ----------------
                       pw.Container(
-                        height: 70,
+                        height: 50,
                         alignment: pw.Alignment.center,
                         padding: const pw.EdgeInsets.all(3),
                         child:
@@ -256,9 +252,8 @@ class KerusakanPdfService {
                                 : pw.Text("-"),
                       ),
 
-                      //---------------- FOTO PERBAIKAN ----------------
                       pw.Container(
-                        height: 70,
+                        height: 50,
                         alignment: pw.Alignment.center,
                         padding: const pw.EdgeInsets.all(3),
                         child:
