@@ -925,10 +925,10 @@ class _KerusakanScreenState extends State<KerusakanScreen> with RouteAware {
                                                           : null,
                                                   style: ElevatedButton.styleFrom(
                                                     backgroundColor:
-                                                        Colors.white,
-                                                    foregroundColor: Color(
+                                                        Color(
                                                       0xFF003C97,
                                                     ),
+                                                    foregroundColor: Colors.white,
                                                     shape: RoundedRectangleBorder(
                                                       borderRadius:
                                                           BorderRadius.circular(
@@ -942,7 +942,9 @@ class _KerusakanScreenState extends State<KerusakanScreen> with RouteAware {
                                                 Text(
                                                   "$currentPage / $totalPages",
                                                   style: const TextStyle(
-                                                    color: Colors.white,
+                                                    color: Color(
+                                                      0xFF003C97,
+                                                    ),
                                                   ),
                                                 ),
                                                 const SizedBox(width: 70),
@@ -955,10 +957,10 @@ class _KerusakanScreenState extends State<KerusakanScreen> with RouteAware {
                                                           : null,
                                                   style: ElevatedButton.styleFrom(
                                                     backgroundColor:
-                                                        Colors.white,
-                                                    foregroundColor: Color(
+                                                        Color(
                                                       0xFF003C97,
                                                     ),
+                                                    foregroundColor: Colors.white,
                                                     shape: RoundedRectangleBorder(
                                                       borderRadius:
                                                           BorderRadius.circular(
