@@ -266,6 +266,7 @@ class _LaporPerbaikanScreenState extends State<LaporPerbaikanScreen> {
                           );
                         },
                       );
+                      if (!context.mounted) return;
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(builder: (_) => TeknisiPicScreen()),
