@@ -108,6 +108,10 @@ flutter:
     - assets/images/kerusakan.png
     - assets/images/user.png
     - assets/images/roleakses.png
+    - assets/images/usecase.png
+    - assets/images/if1.png
+    - assets/images/if2.png
+    - assets/images/if3.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
