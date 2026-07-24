@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo.png" alt="SnapFix Logo" width="140" height="140">
+  <img src="assets/images/logo.png" alt="SnapFix Logo" width="140" height="140">
 </p>
 
 # 📱 SnapFix - Mobile App
@@ -38,7 +38,7 @@
 Berikut adalah fitur yang ada pada aplikasi SnapFix melalui use case diagram:
 
 <p align="center">
-  <img src="assets/usecase.png" alt="SnapFix UC" width="600">
+  <img src="assets/images/usecase.png" alt="SnapFix UC" width="600">
 </p>
 
 ## 📱 Hasil Tampilan Aplikasi SnapFix
@@ -46,13 +46,13 @@ Berikut adalah fitur yang ada pada aplikasi SnapFix melalui use case diagram:
 Berikut adalah beberapa tampilan hasil dari aplikasi SnapFix:
 
 <p align="center">
-  <img src="assets/if1.png" alt="SnapFix IF" width="600">
+  <img src="assets/images/if1.png" alt="SnapFix IF" width="600">
 </p>
 
 <p align="center">
-  <img src="assets/if2.png" alt="SnapFix IF" width="600">
+  <img src="assets/images/if2.png" alt="SnapFix IF" width="600">
 </p>
 
 <p align="center">
-  <img src="assets/if3.png" alt="SnapFix IF" width="600">
+  <img src="assets/images/if3.png" alt="SnapFix IF" width="600">
 </p>
