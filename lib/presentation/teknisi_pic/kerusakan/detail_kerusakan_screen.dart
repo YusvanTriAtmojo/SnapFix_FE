@@ -661,7 +661,7 @@ class _KerusakanDetailScreenState extends State<KerusakanDetailScreen> {
                                                 ),
                                                 const SizedBox(height: 12),
                                                 Text(
-                                                  "Gagal update status: $error",
+                                                  error,
                                                   textAlign: TextAlign.center,
                                                   style: const TextStyle(
                                                     fontSize: 15,
@@ -770,14 +770,14 @@ class _KerusakanDetailScreenState extends State<KerusakanDetailScreen> {
                                                       ),
                                                     ),
                                                    onPressed: () {
-                                                      Navigator.pop(context); // tutup dialog
+                                                      Navigator.of(context).pop();
 
-                                                      Navigator.pushReplacement(
-                                                        context,
-                                                        MaterialPageRoute(
-                                                          builder: (_) => const TeknisiPicScreen(),
+                                                      this.context.read<KerusakanBloc>().add(
+                                                        KerusakanRequested(
+                                                          status: null,
                                                         ),
                                                       );
+                                                      Navigator.of(this.context).pop();
                                                     },
                                                     child: const Text(
                                                       "OK",
