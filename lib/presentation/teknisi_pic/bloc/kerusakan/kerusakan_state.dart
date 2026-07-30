@@ -30,3 +30,14 @@ final class KerusakanFailure extends KerusakanState {
   KerusakanFailure({required this.error});
 }
 
+class KerusakanDeleteSuccess extends KerusakanState {
+  final String message;
+
+  KerusakanDeleteSuccess({required this.message});
+}
+
+class KerusakanUpdateSuccess extends KerusakanState {
+  final String message;
+
+  KerusakanUpdateSuccess({required this.message});
+}

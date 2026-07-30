@@ -32,25 +32,19 @@ class PerbaikanCreateRequested extends KerusakanEvent {
   });
 }
 
-final class KerusakanUpdateRequested extends KerusakanEvent {
+class UpdateStatusKerusakanEvent extends KerusakanEvent {
   final int id;
-  final KerusakanRequestModel requestModel;
+  final String status;
 
-  KerusakanUpdateRequested({
+  UpdateStatusKerusakanEvent({
     required this.id,
-    required this.requestModel,
+    required this.status,
   });
 }
 
 final class UploadFotoKerusakanRequested extends KerusakanEvent {
   final File imageFile;
   UploadFotoKerusakanRequested(this.imageFile);
-}
-
-final class KerusakanDeleted extends KerusakanEvent {
-  final int id;
-
-  KerusakanDeleted(this.id);
 }
 
 

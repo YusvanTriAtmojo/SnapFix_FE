@@ -17,6 +17,7 @@ class KerusakanBloc extends Bloc<KerusakanEvent, KerusakanState> {
     on<KerusakanRequested>(_onKerusakanRequested);
     on<KerusakanCreateRequested>(_onKerusakanCreateRequested);
     on<PerbaikanCreateRequested>(_onPerbaikanCreateRequested);
+    on<UpdateStatusKerusakanEvent>(_onUpdateStatusKerusakan);
     on<HapusPesananEvent>(_onHapusKerusakan);
   }
 
@@ -73,6 +74,23 @@ class KerusakanBloc extends Bloc<KerusakanEvent, KerusakanState> {
     );
   }
 
+  Future<void> _onUpdateStatusKerusakan(
+    UpdateStatusKerusakanEvent event,
+    Emitter<KerusakanState> emit,
+  ) async {
+    emit(KerusakanLoading());
+
+    final result = await kerusakanRepository.updateStatus(
+      event.id,
+      event.status,
+    );
+
+    result.fold(
+      (failure) => emit(KerusakanFailure(error: failure)),
+      (message) => emit(KerusakanUpdateSuccess(message: message)),
+    );
+  }
+
   Future<void> _onHapusKerusakan(
     HapusPesananEvent event,
     Emitter<KerusakanState> emit,
@@ -81,7 +99,7 @@ class KerusakanBloc extends Bloc<KerusakanEvent, KerusakanState> {
     final result = await kerusakanRepository.deleteKerusakan(event.id);
     result.fold(
       (failure) => emit(KerusakanFailure(error: failure)),
-      (message) => emit(KerusakanOperationSuccess(message: message)),
+      (message) => emit(KerusakanDeleteSuccess(message: message)),
     );
   }
 }
