@@ -42,15 +42,37 @@ class _TeknisiProfileScreenState extends State<TeknisiProfileScreen> {
             ),
           ),
           child: SafeArea(
-            child: BlocBuilder<TeknisiPicBloc, TeknisiPicState>(
+            child: BlocConsumer<TeknisiPicBloc, TeknisiPicState>(
+              listener: (context, state) {
+                if (state is TeknisiPicFailure) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(
+                        state.error,
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      duration: const Duration(seconds: 2),
+                      backgroundColor: Colors.white,
+                      behavior: SnackBarBehavior.floating,
+                      margin: const EdgeInsets.symmetric(
+                        horizontal: 20,
+                        vertical: 10,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      elevation: 6,
+                    ),
+                  );
+                }
+              },
               builder: (context, state) {
                 if (state is TeknisiPicLoading) {
                   return const Center(
                     child: CircularProgressIndicator(color: Color(0xFF002F87)),
-                  );
-                } else if (state is TeknisiPicFailure) {
-                  return Center(
-                    child: Text("Gagal memuat data: ${state.error}"),
                   );
                 } else if (state is TeknisiPicLoaded) {
                   final DataUser teknisi = state.teknisiPic;
