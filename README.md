@@ -56,3 +56,11 @@ Berikut adalah beberapa tampilan hasil dari aplikasi SnapFix:
 <p align="center">
   <img src="assets/images/if3.png" alt="SnapFix IF" width="600">
 </p>
+
+---
+
+## 🔗 Backend Repository
+
+Backend source code is available at:
+
+- [SnapFix Backend](https://github.com/YusvanTriAtmojo/SnapFix_BE)
