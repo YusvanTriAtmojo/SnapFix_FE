@@ -24,7 +24,6 @@ class KerusakanDetailScreen extends StatefulWidget {
 class _KerusakanDetailScreenState extends State<KerusakanDetailScreen> {
   final GlobalKey _cardKey = GlobalKey();
   double _cardHeight = 160;
-  Marker? _marker;
   final dateFormat = DateFormat('dd-MM-yyyy');
   late String currentStatus;
   final KerusakanRepository repository = KerusakanRepository(
@@ -34,19 +33,6 @@ class _KerusakanDetailScreenState extends State<KerusakanDetailScreen> {
   @override
   void initState() {
     super.initState();
-    _marker = Marker(
-      point: LatLng(
-        widget.kerusakan.latPosisi,
-        widget.kerusakan.lngPosisi,
-      ),
-      width: 40,
-      height: 40,
-      child: const Icon(
-        Icons.location_on,
-        color: Colors.red,
-        size: 40,
-      ),
-    );
 
     WidgetsBinding.instance.addPostFrameCallback((_) => _updateCardHeight());
     currentStatus = widget.kerusakan.status;
