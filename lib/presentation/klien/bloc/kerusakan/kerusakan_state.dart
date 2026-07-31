@@ -18,6 +18,12 @@ final class KerusakanOperationSuccess extends KerusakanState {
   KerusakanOperationSuccess({required this.message});
 }
 
+class KerusakanDeleteSuccess extends KerusakanState {
+  final String message;
+
+  KerusakanDeleteSuccess({required this.message});
+}
+
 final class KerusakanFiltered extends KerusakanState {
   final List<Kerusakan> filteredKerusakan;
 

@@ -62,7 +62,7 @@ class KerusakanKlienBloc extends Bloc<KerusakanEvent, KerusakanState> {
     final result = await kerusakanKlienRepository.deleteKerusakan(event.id);
     result.fold(
       (failure) => emit(KerusakanFailure(error: failure)),
-      (message) => emit(KerusakanOperationSuccess(message: message)),
+      (message) => emit(KerusakanDeleteSuccess(message: message)),
     );
   }
 }
