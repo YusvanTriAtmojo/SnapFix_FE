@@ -133,11 +133,6 @@ class MyApp extends StatelessWidget {
           ),
         ),
         BlocProvider(
-          create: (context) => ProjectBloc(
-            projectRepository: ProjectRepository(ServiceHttpClient()),
-          ),
-        ),
-        BlocProvider(
           create: (context) => AksesBloc(
             aksesRepository: AksesRepository(ServiceHttpClient()),
           ),
