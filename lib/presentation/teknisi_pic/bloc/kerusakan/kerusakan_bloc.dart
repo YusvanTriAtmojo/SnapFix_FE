@@ -18,7 +18,7 @@ class KerusakanBloc extends Bloc<KerusakanEvent, KerusakanState> {
     on<KerusakanCreateRequested>(_onKerusakanCreateRequested);
     on<PerbaikanCreateRequested>(_onPerbaikanCreateRequested);
     on<UpdateStatusKerusakanEvent>(_onUpdateStatusKerusakan);
-    on<HapusPesananEvent>(_onHapusKerusakan);
+    on<HapusKerusakanEvent>(_onHapusKerusakan);
   }
 
   Future<void> _onKerusakanRequested(
@@ -92,7 +92,7 @@ class KerusakanBloc extends Bloc<KerusakanEvent, KerusakanState> {
   }
 
   Future<void> _onHapusKerusakan(
-    HapusPesananEvent event,
+    HapusKerusakanEvent event,
     Emitter<KerusakanState> emit,
   ) async {
     emit(KerusakanLoading());

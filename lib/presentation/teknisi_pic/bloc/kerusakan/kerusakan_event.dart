@@ -48,10 +48,10 @@ final class UploadFotoKerusakanRequested extends KerusakanEvent {
 }
 
 
-final class HapusPesananEvent extends KerusakanEvent {
+final class HapusKerusakanEvent extends KerusakanEvent {
   final int id;
 
-  HapusPesananEvent(this.id);
+  HapusKerusakanEvent(this.id);
 }
 
 final class AmbilKerusakanAktifEvent extends KerusakanEvent {}

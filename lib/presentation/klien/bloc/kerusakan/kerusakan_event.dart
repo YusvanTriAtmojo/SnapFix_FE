@@ -24,12 +24,6 @@ final class UploadFotoKerusakanRequested extends KerusakanEvent {
   UploadFotoKerusakanRequested(this.imageFile);
 }
 
-final class KerusakanDeleted extends KerusakanEvent {
-  final int id;
-
-  KerusakanDeleted(this.id);
-}
-
 final class HapusKerusakanEvent extends KerusakanEvent {
   final int id;
 
