@@ -131,7 +131,7 @@ class _KerusakanDetailScreenState extends State<KerusakanDetailScreen> {
                             Navigator.of(context).pop();
 
                             this.context.read<KerusakanBloc>().add(
-                              KerusakanRequested(status: null),
+                              KerusakanRequested(status: "pending"),
                             );
                             Navigator.of(this.context).pop();
                           },
@@ -280,7 +280,7 @@ class _KerusakanDetailScreenState extends State<KerusakanDetailScreen> {
                             Navigator.of(context).pop();
 
                             this.context.read<KerusakanBloc>().add(
-                              KerusakanRequested(status: null),
+                              KerusakanRequested(status: "pending"),
                             );
                             Navigator.of(this.context).pop();
                           },
@@ -893,10 +893,85 @@ class _KerusakanDetailScreenState extends State<KerusakanDetailScreen> {
                                       ),
                                     ),
                                     onPressed: () {
-                                      context.read<KerusakanBloc>().add(
-                                        HapusPesananEvent(
-                                          widget.kerusakan.idKerusakan,
-                                        ),
+                                      showDialog(
+                                        context: context,
+                                        builder: (dialogContext) {
+                                          return AlertDialog(
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(16),
+                                            ),
+                                            titlePadding: EdgeInsets.zero,
+                                            title: Container(
+                                              padding:
+                                                  const EdgeInsets.symmetric(
+                                                    vertical: 12,
+                                                    horizontal: 20,
+                                                  ),
+                                              decoration: const BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.vertical(
+                                                      top: Radius.circular(16),
+                                                    ),
+                                                gradient: LinearGradient(
+                                                  colors: [
+                                                    Color(0xFF003C97),
+                                                    Color(0xFF0056D6),
+                                                    Color(0xFFFF7A00),
+                                                  ],
+                                                ),
+                                              ),
+                                              child: const Text(
+                                                "Konfirmasi Pembatalan",
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.white,
+                                                ),
+                                              ),
+                                            ),
+                                            content: const Text(
+                                              "Apakah Anda yakin ingin membatalkan laporan ini ?",
+                                            ),
+                                            actions: [
+                                              TextButton(
+                                                onPressed: () {
+                                                  Navigator.pop(dialogContext);
+                                                },
+                                                child: const Text(
+                                                  "Batal",
+                                                  style: TextStyle(
+                                                    color: Colors.black,
+                                                  ),
+                                                ),
+                                              ),
+                                              ElevatedButton(
+                                                style: ElevatedButton.styleFrom(
+                                                  backgroundColor: Color(
+                                                    0xFFAF3536,
+                                                  ),
+                                                ),
+                                                onPressed: () {
+                                                  Navigator.pop(dialogContext);
+                                                  context
+                                                      .read<KerusakanBloc>()
+                                                      .add(
+                                                        HapusKerusakanEvent(
+                                                          widget
+                                                              .kerusakan
+                                                              .idKerusakan,
+                                                        ),
+                                                      );
+                                                },
+                                                child: const Text(
+                                                  "Oke",
+                                                  style: TextStyle(
+                                                    color: Colors.white,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          );
+                                        },
                                       );
                                     },
                                     child: const Text(
