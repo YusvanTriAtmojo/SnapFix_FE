@@ -158,7 +158,8 @@ class _KerusakanScreenState extends State<KerusakanScreen> with RouteAware {
                     Expanded(
                       child: BlocConsumer<KerusakanKlienBloc, KerusakanState>(
                         listener: (context, state) {
-                          if (state is KerusakanFailure) {
+                          if (state is KerusakanFailure&&
+                          !state.error.toLowerCase().contains('hapus')) {
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
                               content: Text(
