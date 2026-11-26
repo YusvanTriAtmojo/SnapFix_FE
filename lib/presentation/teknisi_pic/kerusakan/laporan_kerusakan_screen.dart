@@ -54,6 +54,10 @@ class _LaporKerusakanScreenState extends State<LaporKerusakanScreen> {
       permission = await Geolocator.requestPermission();
     }
 
+    if (!mounted) {
+      return;
+    }
+
     if (permission == LocationPermission.deniedForever) {
       showDialog(
         context: context,
@@ -120,6 +124,9 @@ class _LaporKerusakanScreenState extends State<LaporKerusakanScreen> {
   Future<void> _loadUserIdDanFetchLokasi() async {
     final prefs = await SharedPreferences.getInstance();
     final storedUserId = prefs.getInt('userId');
+    if (!mounted) {
+      return;
+    }
     if (storedUserId != null) {
       setState(() => userId = storedUserId);
       context.read<LokasiBloc>().add(LoadLokasiByUserId(userId: storedUserId));
@@ -129,6 +136,9 @@ class _LaporKerusakanScreenState extends State<LaporKerusakanScreen> {
   Future<void> _loadUserIdDanFetchFasilitas() async {
     final prefs = await SharedPreferences.getInstance();
     final storedUserId = prefs.getInt('userId');
+    if (!mounted) {
+      return;
+    }
     if (storedUserId != null) {
       setState(() => userId = storedUserId);
       context.read<FasilitasBloc>().add(
@@ -143,7 +153,6 @@ class _LaporKerusakanScreenState extends State<LaporKerusakanScreen> {
         desiredAccuracy: LocationAccuracy.high,
       );
     } catch (e) {
-      print('Error: $e');
       return null;
     }
   }

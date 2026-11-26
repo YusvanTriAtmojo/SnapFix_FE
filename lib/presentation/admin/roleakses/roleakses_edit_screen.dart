@@ -186,6 +186,7 @@ class _RoleaksesEditScreenState extends State<RoleaksesEditScreen> {
                             );
                           },
                         );
+                        if (!context.mounted) return;
                         Navigator.pop(context, true);
                       } else if (state is RoleaksesFailure) {
                         showDialog(
