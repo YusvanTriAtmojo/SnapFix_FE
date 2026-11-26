@@ -544,7 +544,7 @@ class _LokasiScreenState extends State<LokasiScreen> {
                                                   ),
                                                 ),
                                                 Text(
-                                                  lokasi.namaProject ?? '',
+                                                  lokasi.namaProject,
                                                   style: const TextStyle(
                                                     fontSize: 15,
                                                     color: Colors.white,
